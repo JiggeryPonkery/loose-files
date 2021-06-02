@@ -1,0 +1,104 @@
+
+/* Menubar on top */
+:root:not([sizemode="fullscreen"]){ --uc-window-control-width: 0px !important }
+
+#navigator-toolbox{ padding-top: calc(20px + var(--uc-titlebar-padding,0px)) !important }
+:root[sizemode="fullscreen"] #navigator-toolbox{ padding-top: 0px !important; }
+#toolbar-menubar{
+  position: fixed;
+  display: flex;
+  top: var(--uc-titlebar-padding,0px);
+  width: 100%;
+  overflow: hidden;
+  }
+
+/* Bookmark bar beneath URL bar, Tabs beneath URL bar */
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+
+#titlebar{
+  -moz-box-ordinal-group: 2;
+  -moz-appearance: none !important;
+  --tabs-navbar-shadow-size: 0px;
+  }
+
+/* ---Tabs/Tab Bar height--- */
+:root {
+  --tab-min-height: 28px !important; /* adjust to suit your needs */
+  }
+:root #tabbrowser-tabs {
+  --tab-min-height: 28px !important; /* needs to be the same as above under :root */
+  } 
+  
+/* ---Remove blue line from tabs--- */
+#TabsToolbar .tabbrowser-tab .tab-line {
+  display: none !important;
+  }
+  
+/* Border around inactive tabs */
+.tabbrowser-tab {
+  border-top: 1px solid #a0a0a0 !important;
+  border-left: 0px solid #a0a0a0 !important;
+  border-right: 1px solid #a0a0a0 !important;
+  border-bottom: none !important;
+  border-radius: 1px 1px 0px 0px !important;
+  }
+
+/* Remove | sperator from inactive tabs */
+.tabbrowser-tab::before, 
+.tabbrowser-tab::after{
+  display: none !important;
+  }  
+  
+/* Border around active tab */
+.tabbrowser-tab[visuallyselected="true"] {
+  border-top: none !important; 
+  border-left: 0px solid #a0a0a0 !important; 
+  border-right: 1px solid #a0a0a0 !important; 
+  border-bottom: none !important;
+  }
+
+/* ---3D Bookmark Buttons--- */
+toolbarbutton.bookmark-item {
+  margin-left: 20px !important;
+  margin: 1px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  border: 1px outset #ddd !important;
+  }
+
+/* Remove space before 3d Bookmark buttons */
+#navigator-toolbox #PersonalToolbar {
+  padding: 2px 2px 2px !important;  
+}
+
+/* URL bar background color */
+#nav-bar:not(:-moz-lwtheme) {
+  -moz-appearance: none !important;
+  background: var(--general_toolbar_color_navbar, inherit) !important;
+  padding-bottom: 0px !important;
+  }
+ 
+/* Bookmark bar background color */
+toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme) {
+  -moz-appearance: none !important;
+  background: var(--general_toolbar_color_toolbars, inherit) !important;
+  }
+  
+/* hide line above navigation toolbar */
+#navigator-toolbox::after {
+  border-bottom: 0px !important;
+  }
+#nav-bar {
+  box-shadow: none !important;
+  border-top: none !important;
+  }
+    
+#main-window:not([tabsintitlebar]) #navigator-toolbox {
+  border-top: none !important;
+  /* remove border entirely with--  border: none !important; */
+  border-bottom: 1px solid #a0a0a0 !important;
+  box-shadow: none !important;
+}
+
+
+
